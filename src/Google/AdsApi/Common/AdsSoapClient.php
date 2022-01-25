@@ -93,7 +93,7 @@ class AdsSoapClient extends SoapClient
         $action,
         $version,
         $one_way = 0
-    ) {
+    ): ?string {
         $request = SoapRequests::replaceReferences($request);
         $response = parent::__doRequest($request, $location, $action, $version, $one_way);
         $this->__last_request = $request;
@@ -110,7 +110,7 @@ class AdsSoapClient extends SoapClient
         $options = null,
         $input_headers = null,
         &$output_headers = null
-    ) {
+    ): mixed {
         // Generate the HTTP headers for this API request.
         $httpHeaders = $this->headerHandler->generateHttpHeaders($this->adsSession);
         // The context this SOAP client was originally created with. This is the
